@@ -9,7 +9,7 @@ if($connection->connect_error) {
 }
 
 //запрос с базы данных
-$query = "SELECT * FROM test";
+$query = "SELECT * FROM users";
 $result = $connection->query($query);
 
 if(!$result) {
