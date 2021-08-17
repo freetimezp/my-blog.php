@@ -1,35 +1,12 @@
 <?php
-//подключаем файл с настройками сервера
-require_once 'settings.php';
+//подключаем файл с настройками сервера use PDO
 
-//создаем новое подключение к базе данных
-$connection = new mysqli($host, $user, $pass, $data);
-if($connection->connect_error) {
-    die('error connection');
-}
+$connection = new PDO("mysql:host=localhost;dbname=myBlog;charset=utf8", "root", "");
 
-//запрос с базы данных
-$query = "SELECT * FROM test";
-$result = $connection->query($query);
+//запись данных
+$query = "INSERT INTO test (name, content) VALUES ('alex', 'content alex')";
 
-if(!$result) {
-    die('no result');
-}
+$count = $connection->exec($query);
 
-echo '<pre>';
-print_r($result);
-echo '</pre>' . '<hr>';
+echo $count;
 
-$rows = $result->num_rows;
-
-echo '<pre>';
-print_r($rows);
-echo '</pre>' . '<hr>';
-
-for($i = 0; $i < $rows; ++$i) {
-    $result->data_seek($i);
-    echo 'Name: ' . $result->fetch_assoc()['name'] . '<hr>';
-}
-
-$result->close();
-$connection->close();
