@@ -41,3 +41,16 @@ foreach ($data as $k => $v){
     }
 }
 
+//изменение данных, подготовленный запрос
+$name = 'alexander';
+$id = 3;
+
+$param = [
+    ':id' => $id,
+    ':name' => $name
+];
+
+$sql = "UPDATE `users` SET `name` = :name WHERE `id` = :id";
+$query = $connection->prepare($sql);
+
+$query->execute($param);
