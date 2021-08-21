@@ -1,5 +1,8 @@
 * {
     font-family: 'Comfortaa', cursive;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html, h1, h2, h3, h4, h5, h6 {
@@ -10,7 +13,8 @@ body {
     background: #eeecec;
 }
 
-a {
+ul, li, a {
+    list-style-type: none;
     text-decoration: none;
     color: inherit;
 }
@@ -24,15 +28,16 @@ header {
     height: 70px;
 }
 
-header * {
-    color: #fff;
-}
-
 header h1 {
     margin-top: 14px;
 }
 
-header h1 a, a:hover {
+header .logo-image {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.logo-image:hover {
     color: #fff;
 }
 
@@ -45,9 +50,85 @@ header ul {
 }
 
 header ul li a {
+    color: #fff;
     display: block;
     font-size: 1.2rem;
     text-decoration: none;
-    margin-right: 20px;
-    padding: 22px 0;
+    padding: 20px 10px;
+    transition: 0.6s ease;
+}
+
+header ul li a:hover {
+    color: #acacac;
+    background: #006669;
+}
+
+header ul li ul {
+    position: absolute;
+    top: 70px;
+    right: 81px;
+    width: 100px;
+    z-index: 10000;
+    display: none;
+}
+
+header ul li:hover ul {
+    display: block;
+}
+
+header ul li ul li {
+    width: 100%;
+}
+
+header ul li ul li a {
+    padding: 10px;
+    background: #eeebeb;
+    color: #006669;
+}
+
+header ul li ul li:hover a {
+    color: #fff;
+}
+
+/*
+    SLIDER
+ */
+
+.slider-title {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.carousel-item img {
+    height: 250px;
+}
+
+.carousel-item,.carousel-inner {
+    border-radius: 4px;
+}
+
+.carousel-caption {
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-caption h5 {
+    font-size: 25px;
+    font-weight: 500;
+    background-color: #000;
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    color: #fff;
+    transition: all 0.5s ease;
+    opacity: 0.7;
+}
+
+.carousel-caption h5:hover, a:hover {
+    color: #008484;
 }
