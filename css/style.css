@@ -19,6 +19,15 @@ ul, li, a {
     color: inherit;
 }
 
+input {
+    padding: 5px;
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #006669;
+    outline: none;
+}
+
 /*
     HEADER
 */
@@ -132,3 +141,104 @@ header ul li ul li:hover a {
 .carousel-caption h5:hover, a:hover {
     color: #008484;
 }
+
+/*
+    MAIN
+ */
+
+.main-content .main-content-title {
+    margin: 30px 0;
+}
+
+.main-content .post {
+    margin-bottom: 20px;
+}
+
+.main-content .post_text {
+    background: #fff;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.main-content .post_text h3 {
+    font-size: 15px;
+    font-weight: 900;
+    transition: all 0.5s ease;
+    margin-bottom: 15px;
+}
+
+.main-content .post_text h3:hover {
+    text-decoration: underline;
+}
+
+.main-content .post_text i {
+    margin-bottom: 10px;
+    margin-right: 15px;
+}
+
+.main-content .post_text span {
+    margin-left: 5px;
+}
+
+.main-content .post_text .preview-text {
+    font-size: 12px;
+}
+
+/*
+    SIDEBAR
+ */
+
+.container .sidebar {
+    margin-top: 96px;
+}
+
+.sidebar .section {
+    margin-left: 5px;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.sidebar .section.search {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.sidebar .section.topics {
+    padding: 10px;
+}
+
+.sidebar .section.topics h3 {
+    font-size: 18px;
+}
+
+.sidebar .section.topics ul li a {
+    font-size: 12px;
+    transition: all 0.5s ease;
+    padding: 0;
+}
+
+.sidebar .section.topics ul li a:hover {
+    padding-left: 7px;
+    font-weight: 700;
+}
+
+.sidebar .section.topics ul {
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
