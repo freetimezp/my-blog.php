@@ -226,6 +226,103 @@ header ul li ul li:hover a {
     padding: 0;
 }
 
+/*
+    FOOTER
+ */
+
+.footer {
+    color: #d3d3d3;
+    position: relative;
+    background: #303036;
+    padding: 22px 0;
+}
+
+.footer .row {
+    padding-bottom: 40px;
+}
+
+.footer h3, h4 {
+    color: #fff;
+}
+
+.footer .about .contact span {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    margin-right: 10px;
+}
+
+.footer .about .socials a {
+    border: 1px solid gray;
+    width: 45px;
+    height: 41px;
+    padding-top: 5px;
+    margin-right: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer .about .socials a:hover {
+    border: 1px solid #fff;
+}
+
+.footer .links ul a {
+    display: block;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+}
+
+.footer .links ul a:hover {
+    padding-left: 5px;
+}
+
+.footer .contact-form .contact-input {
+    background: #272727;
+    color: #bebdbd;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.5s ease;
+    border: 1px solid transparent;
+}
+
+.footer .contact-form .contact-input:focus {
+    background: #1a1a1a;
+    border: 1px solid #fff;
+}
+
+.footer .contact-form .contact-btn {
+    font-size: 15px;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+.footer .contact-form .contact-btn:hover {
+    color: #e7e5e5;
+    background: #414147;
+}
+
+.footer .footer-bottom {
+    background: #343a40;
+    color: #686868;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
 
 
 
