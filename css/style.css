@@ -322,7 +322,44 @@ header ul li ul li:hover a {
     bottom: 0;
 }
 
+/*
+    SINGLE-POST
+ */
 
+.single_post .img-thumbnail {
+    margin-bottom: 20px;
+}
+
+.single_post .info {
+    margin-bottom: 20px;
+}
+
+.single_post .info span {
+    margin-left: 5px;
+    font-weight: 900;
+    font-size: 12px;
+}
+
+.single_post .info i {
+    margin-right: 20px;
+}
+
+.single_post .single_post_text {
+    text-align: justify;
+}
+
+.single_post .single_post_text a {
+    color: blue;
+}
+
+.single_post .single_post_text a:hover {
+    text-decoration: underline;
+    color: #7171e2;
+}
+
+.single_post .single_post_text:last-child {
+    margin-bottom: 40px;
+}
 
 
 
