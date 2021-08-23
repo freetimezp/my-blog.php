@@ -372,10 +372,10 @@ header ul li ul li:hover a {
 
 .main-content .about-music {
     margin-bottom: 30px;
+    display: flex;
 }
 
 .main-content .about-music div {
-    display: inline-block;
     background: #fff;
     padding: 10px;
     margin-bottom: 10px;
@@ -388,7 +388,34 @@ header ul li ul li:hover a {
     margin: 15px 10px;
 }
 
+/*
+    REG-FORM
+ */
+.container .row.reg-form {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+.container .form-title {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.container .row.reg-form .btn.btn-primary {
+    background: #008484;
+    border: 1px solid #008484;
+}
+
+.container .row.reg-form .btn.btn-primary:hover {
+    background: #1e9494;
+}
+
+.container .row.reg-form div.reg-auth-button {
+    display: flex;
+    justify-content: space-between;
+}
 
 
 
