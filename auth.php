@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,19 +25,19 @@
         <div class="row">
             <div class="col-4">
                 <h1>
-                    <a href="index.html" class="logo-image">My blog</a>
+                    <a href="index.php" class="logo-image">My blog</a>
                 </h1>
             </div>
             <nav class="col-8">
                 <ul>
                     <li>
-                        <a href="index.html">Главная</a>
+                        <a href="index.php">Главная</a>
                     </li>
                     <li>
                         <a href="#">Услуги</a>
                     </li>
                     <li>
-                        <a href="about.html">О нас</a>
+                        <a href="about.php">О нас</a>
                     </li>
                     <li>
                         <a href="#">
@@ -61,29 +61,20 @@
 
 <div class="container">
     <div class="form-title">
-        <h2>Форма регистрации</h2>
+        <h2>Авторизация доступа</h2>
     </div>
-    <form class="reg-form justify-content-center row" method="post" action="reg.html">
+    <form class="reg-form justify-content-center row" method="post" action="auth.php">
         <div class="mb-3 col-12 col-md-6">
             <label for="formGroupExampleInput" class="form-label">Ваш логин</label>
             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите логин..">
         </div>
         <div class="mb-3 col-12 col-md-6">
-            <label for="exampleInputEmail1" class="form-label">Ваш электронный ящик</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите email..">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3 col-12 col-md-6">
             <label for="exampleInputPassword1" class="form-label">Пароль</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите пароль..">
         </div>
-        <div class="mb-3 col-12 col-md-6">
-            <label for="exampleInputPassword2" class="form-label">Подтвердите пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Подтвердите пароль..">
-        </div>
         <div class="mb-3 col-12 col-md-6 reg-auth-button">
-            <button type="submit" class="btn btn-primary">Регистрация</button>
             <button type="submit" class="btn btn-primary">Войти</button>
+            <button type="submit" class="btn btn-primary">Регистрация</button>
         </div>
     </form>
 </div>

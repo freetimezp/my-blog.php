@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,19 +25,19 @@
         <div class="row">
             <div class="col-4">
                 <h1>
-                    <a href="index.html" class="logo-image">My blog</a>
+                    <a href="index.php" class="logo-image">My blog</a>
                 </h1>
             </div>
             <nav class="col-8">
                 <ul>
                     <li>
-                        <a href="index.html">Главная</a>
+                        <a href="index.php">Главная</a>
                     </li>
                     <li>
                         <a href="#">Услуги</a>
                     </li>
                     <li>
-                        <a href="about.html">О нас</a>
+                        <a href="about.php">О нас</a>
                     </li>
                     <li>
                         <a href="#">
@@ -60,23 +60,88 @@
 </header>
 
 <div class="container">
-    <div class="form-title">
-        <h2>Авторизация доступа</h2>
+    <div class="content row">
+        <div class="main-content col-12 col-md-9">
+            <h2 class="main-content-title">Заголовок статьи</h2>
+            <div class="single_post row">
+                <div class="img col-12">
+                    <img src="assets/images/single-post-1.jpg" alt="" class="img-thumbnail">
+                </div>
+                <div class="info">
+                    <i class="far fa-user">
+                        <span>Имя автора</span>
+                    </i>
+                    <i class="far fa-calendar">
+                        <span>21.08.2021</span>
+                    </i>
+                </div>
+                <div>
+                    <h3>Заголовок</h3>
+                </div>
+                <div class="single_post_text col-12">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in <a href="#">incidunt</a> iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in <a href="#">incidunt</a>  iste iure nam odio pariatur quae quidem quis similique!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in <a href="#">incidunt</a>  iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio <a href="#">incidunt</a>  quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="sidebar col-12 col-md-3">
+            <div class="section search">
+                <h3 class="sidebar-title">Поиск</h3>
+                <form action="/" method="post">
+                    <input type="text" name="search-form" class="text-input" placeholder="Поиск...">
+                </form>
+            </div>
+
+            <div class="section topics">
+                <h3>Категории:</h3>
+                <ul>
+                    <li><a href="#">Мотивация</a></li>
+                    <li><a href="#">Персоны</a></li>
+                    <li><a href="#">Уроки жизни</a></li>
+                    <li><a href="#">Смешно</a></li>
+                    <li><a href="#">Интересно</a></li>
+                    <li><a href="#">Музыка</a></li>
+                    <li><a href="#">Фильмы</a></li>
+                    <li><a href="#">Игры</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <form class="reg-form justify-content-center row" method="post" action="auth.html">
-        <div class="mb-3 col-12 col-md-6">
-            <label for="formGroupExampleInput" class="form-label">Ваш логин</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите логин..">
-        </div>
-        <div class="mb-3 col-12 col-md-6">
-            <label for="exampleInputPassword1" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите пароль..">
-        </div>
-        <div class="mb-3 col-12 col-md-6 reg-auth-button">
-            <button type="submit" class="btn btn-primary">Войти</button>
-            <button type="submit" class="btn btn-primary">Регистрация</button>
-        </div>
-    </form>
 </div>
 
 <div class="footer container-fluid">

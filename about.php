@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Fonts CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,19 +25,19 @@
         <div class="row">
             <div class="col-4">
                 <h1>
-                    <a href="index.html" class="logo-image">My blog</a>
+                    <a href="index.php" class="logo-image">My blog</a>
                 </h1>
             </div>
             <nav class="col-8">
                 <ul>
                     <li>
-                        <a href="index.html">Главная</a>
+                        <a href="index.php">Главная</a>
                     </li>
                     <li>
                         <a href="#">Услуги</a>
                     </li>
                     <li>
-                        <a href="about.html">О нас</a>
+                        <a href="about.php">О нас</a>
                     </li>
                     <li>
                         <a href="#">
@@ -62,14 +62,11 @@
 <div class="container">
     <div class="content row">
         <div class="main-content col-12 col-md-9">
-            <h2 class="main-content-title">Заголовок статьи</h2>
+            <h2 class="main-content-title">О нас</h2>
             <div class="single_post row">
-                <div class="img col-12">
-                    <img src="images/single-post-1.jpg" alt="" class="img-thumbnail">
-                </div>
                 <div class="info">
                     <i class="far fa-user">
-                        <span>Имя автора</span>
+                        <span>Автор блога</span>
                     </i>
                     <i class="far fa-calendar">
                         <span>21.08.2021</span>
@@ -116,6 +113,29 @@
                         Aut in incidunt iste iure nam odio pariatur quae quidem quis similique!
                     </p>
 
+                </div>
+            </div>
+
+            <h3 class="main-content-title">Видео</h3>
+            <div class="about-video">
+                <video src="assets/video/video-1.mp4" controls></video>
+            </div>
+
+            <h3 class="main-content-title">Музыка</h3>
+            <div class="about-music">
+                <div>
+                    <p>Елена Ваенга "Твои руки не меня обнимут..."</p>
+                    <audio controls>
+                        <source src="assets/music/music-1.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div>
+                    <p>Сергей Скрябин "Говорили и курили..."</p>
+                    <audio controls>
+                        <source src="assets/music/music-2.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
                 </div>
             </div>
         </div>
