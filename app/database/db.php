@@ -8,14 +8,7 @@ function tt($value) {
     echo '</pre>';
 }
 
-function selectAll($table) {
-    global $pdo;
-
-    $sql = "SELECT * FROM $table";
-
-    $query = $pdo->prepare($sql);
-    $query->execute();
-
+function dbCheckError($query) {
     $errInfo = $query->errorInfo();
 
     if($errInfo[0] !== PDO::ERR_NONE) {
@@ -23,12 +16,78 @@ function selectAll($table) {
         exit();
     }
 
+    return true;
+}
+
+function selectAll($table, $params = []) {
+    global $pdo;
+    $sql = "SELECT * FROM $table";
+
+    if(!empty($params)) {
+        $i = 0;
+        foreach ($params as $key => $value) {
+            if(!is_numeric($value)) {
+                $value = "'" . $value . "'";
+            }
+
+            if($i === 0) {
+                $sql = $sql . " WHERE $key = $value";
+            }else{
+                $sql = $sql . " AND $key = $value";
+            }
+            $i++;
+        }
+    }
+
+    $query = $pdo->prepare($sql);
+    $query->execute();
+
+    dbCheckError($query);
+
     $data = $query->fetchAll();
 
     return $data;
 }
 
-tt(selectAll('users'));
+function selectOne($table, $params = []) {
+    global $pdo;
+    $sql = "SELECT * FROM $table";
+
+    if(!empty($params)) {
+        $i = 0;
+        foreach ($params as $key => $value) {
+            if(!is_numeric($value)) {
+                $value = "'" . $value . "'";
+            }
+
+            if($i === 0) {
+                $sql = $sql . " WHERE $key = $value";
+            }else{
+                $sql = $sql . " AND $key = $value";
+            }
+            $i++;
+        }
+    }
+
+    $sql .= " LIMIT 1";
+
+    $query = $pdo->prepare($sql);
+    $query->execute();
+
+    dbCheckError($query);
+
+    $data = $query->fetch();
+
+    return $data;
+}
+
+$params = [
+    'admin' => 1
+];
+
+
+tt(selectOne('users', $params));
+//tt(selectAll('users', $params));
 
 
 
