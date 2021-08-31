@@ -1,4 +1,5 @@
 <?php include('path.php'); ?>
+<?php include('app/controllers/users.php'); ?>
 
 <?php include('app/include/header.php'); ?>
 
@@ -9,24 +10,24 @@
     <form class="reg-form justify-content-center row" method="post" action="reg.php">
         <div class="mb-3 col-12 col-md-6">
             <label for="formGroupExampleInput" class="form-label">Ваш логин</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите логин..">
+            <input name="login" type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите логин..">
         </div>
         <div class="mb-3 col-12 col-md-6">
             <label for="exampleInputEmail1" class="form-label">Ваш электронный ящик</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите email..">
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите email..">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3 col-12 col-md-6">
             <label for="exampleInputPassword1" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите пароль..">
+            <input name="pass-first" type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите пароль..">
         </div>
         <div class="mb-3 col-12 col-md-6">
             <label for="exampleInputPassword2" class="form-label">Подтвердите пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Введите пароль повторно..">
+            <input name="pass-second" type="password" class="form-control" id="exampleInputPassword2" placeholder="Введите пароль повторно..">
         </div>
         <div class="mb-3 col-12 col-md-6 reg-auth-button">
-            <button type="submit" class="btn btn-primary">Регистрация</button>
-            <button type="submit" class="btn btn-primary">Войти</button>
+            <button name="button-reg" type="submit" class="btn btn-primary">Регистрация</button>
+            <button name="button-auth" type="submit" class="btn btn-primary">Войти</button>
         </div>
     </form>
 </div>

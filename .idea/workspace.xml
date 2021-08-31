@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a177c988-ff91-45f0-af16-03d941daf197" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controllers/users.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/database/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reg.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,7 @@
       <workItem from="1629995082381" duration="5144000" />
       <workItem from="1630084689051" duration="3063000" />
       <workItem from="1630336449959" duration="3457000" />
-      <workItem from="1630415235736" duration="2216000" />
+      <workItem from="1630415235736" duration="5078000" />
     </task>
     <servers />
   </component>
@@ -156,10 +158,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1630347096251" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1629999713506">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1630421095156">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1629999713506" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1630421095156" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1629566711796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
