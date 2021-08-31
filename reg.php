@@ -8,13 +8,18 @@
         <h2>Форма регистрации</h2>
     </div>
     <form class="reg-form justify-content-center row" method="post" action="reg.php">
+        <div class="mb-3 col-12 col-md-6 err">
+            <p>
+                <?=$errMsg;?>
+            </p>
+        </div>
         <div class="mb-3 col-12 col-md-6">
             <label for="formGroupExampleInput" class="form-label">Ваш логин</label>
-            <input name="login" type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите логин..">
+            <input name="login" value="<?=$login;?>" type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите логин..">
         </div>
         <div class="mb-3 col-12 col-md-6">
             <label for="exampleInputEmail1" class="form-label">Ваш электронный ящик</label>
-            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите email..">
+            <input name="email" value="<?=$email;?>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите email..">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3 col-12 col-md-6">

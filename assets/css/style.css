@@ -417,6 +417,12 @@ header ul li ul li:hover a {
     justify-content: space-between;
 }
 
+.reg-form .err p {
+    color: red;
+    padding-left: 20px;
+    font-style: italic;
+}
+
 
 
 
