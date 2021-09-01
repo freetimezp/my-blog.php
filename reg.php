@@ -13,6 +13,11 @@
                 <?=$errMsg;?>
             </p>
         </div>
+        <div class="mb-3 col-12 col-md-6 success">
+            <p>
+                <?=$successMsg;?>
+            </p>
+        </div>
         <div class="mb-3 col-12 col-md-6">
             <label for="formGroupExampleInput" class="form-label">Ваш логин</label>
             <input name="login" value="<?=$login;?>" type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите логин..">

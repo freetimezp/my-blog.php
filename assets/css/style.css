@@ -423,6 +423,11 @@ header ul li ul li:hover a {
     font-style: italic;
 }
 
+.reg-form .success p {
+    color: #3fae11;
+    padding-left: 20px;
+    font-style: italic;
+}
 
 
 

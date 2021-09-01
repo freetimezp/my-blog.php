@@ -2,8 +2,8 @@
 
 include('app/database/db.php');
 
-$isSubmit = false;
 $errMsg = '';
+$successMsg = '';
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $admin = 0;
@@ -21,17 +21,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     }elseif(mb_strlen($passF, 'UTF-8') < 6 ){
         $errMsg = "Введите пароль больше 5 символов!";
     }else{
-        $passHash = password_hash($passF, PASSWORD_DEFAULT);
+        $existance = selectOne('users', [
+            'email' => $email
+        ]);
+        //tt($existance);
 
-        $post = [
-            'admin' => $admin,
-            'username' => $login,
-            'email' => $email,
-            'password' => $passHash
-        ];
+        if($existance['email'] === $email) {
+            $errMsg = "Пользователь с такой электронной почтой уже существует!";
+        }else{
+            $passHash = password_hash($passF, PASSWORD_DEFAULT);
 
-        $id = insert('users', $post);
-        $isSubmit = true;
+            $post = [
+                'admin' => $admin,
+                'username' => $login,
+                'email' => $email,
+                'password' => $passHash
+            ];
+
+            $id = insert('users', $post);
+            $successMsg = "Пользователь $login успешно зарегистрирован!";
+        }
+
         //tt($post);
     }
 
