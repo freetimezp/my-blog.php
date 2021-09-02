@@ -40,6 +40,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $id = insert('users', $post);
             $successMsg = "Пользователь $login успешно зарегистрирован!";
+
+            $user = selectOne('users', ['id' => $id]);
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['login'] = $user['username'];
+            $_SESSION['admin'] = $user['admin'];
+
+            if($_SESSION['admin']) {
+                header('location: ' . BASE_URL . admin/admin.php);
+            }
         }
 
         //tt($post);

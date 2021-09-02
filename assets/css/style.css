@@ -67,6 +67,10 @@ header ul li a {
     transition: 0.6s ease;
 }
 
+header ul li:last-child {
+    width: 180px;
+}
+
 header ul li a:hover {
     color: #acacac;
     background: #006669;
@@ -75,8 +79,8 @@ header ul li a:hover {
 header ul li ul {
     position: absolute;
     top: 70px;
-    right: 81px;
-    width: 100px;
+    right: 77px;
+    width: 180px;
     z-index: 10000;
     display: none;
 }
@@ -90,6 +94,7 @@ header ul li ul li {
 }
 
 header ul li ul li a {
+    width: 100%;
     padding: 10px;
     background: #eeebeb;
     color: #006669;

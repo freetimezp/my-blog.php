@@ -33,11 +33,27 @@
                     <li><a href="<?php echo BASE_URL; ?>">Главная</a></li>
                     <li><a href="#">Услуги</a></li>
                     <li><a href="<?php echo BASE_URL . 'about.php'; ?>">О нас</a></li>
-                    <li><a href="#"><i class="fas fa-user"></i>Кабинет</a>
-                        <ul>
-                            <li><a href="<?php echo BASE_URL . 'auth.php'; ?>">Админ панель</a></li>
-                            <li><a href="#">Выход</a></li>
-                        </ul>
+                    <li>
+                        <?php if(isset($_SESSION['id'])): ?>
+                            <a href="#">
+                                <i class="fas fa-user"></i>
+                                <?=$_SESSION['login']; ?>
+                            </a>
+                            <ul>
+                                <?php if($_SESSION['admin']):?>
+                                    <li><a href="<?php echo BASE_URL . 'auth.php'; ?>">Админ панель</a></li>
+                                <?php endif; ?>
+                                <li><a href="#">Выход</a></li>
+                            </ul>
+                        <?php else: ?>
+                            <a href="<?php echo BASE_URL . 'auth.php'; ?>">
+                                <i class="fas fa-user"></i>
+                                Войти
+                            </a>
+                            <ul>
+                                <li><a href="<?php echo BASE_URL . 'reg.php'; ?>">Регистрация</a></li>
+                            </ul>
+                        <?php endif; ?>
                     </li>
                 </ul>
             </nav>

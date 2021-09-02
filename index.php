@@ -1,5 +1,7 @@
 <?php include('path.php'); ?>
 
+<?php include('app/database/db.php'); ?>
+
 <?php include('app/include/header.php'); ?>
 
 <div class="container">
