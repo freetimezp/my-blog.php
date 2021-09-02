@@ -43,7 +43,7 @@
                                 <?php if($_SESSION['admin']):?>
                                     <li><a href="<?php echo BASE_URL . 'auth.php'; ?>">Админ панель</a></li>
                                 <?php endif; ?>
-                                <li><a href="#">Выход</a></li>
+                                <li><a href="<?php echo BASE_URL . 'logout.php'; ?>">Выход</a></li>
                             </ul>
                         <?php else: ?>
                             <a href="<?php echo BASE_URL . 'auth.php'; ?>">
@@ -51,7 +51,11 @@
                                 Войти
                             </a>
                             <ul>
-                                <li><a href="<?php echo BASE_URL . 'reg.php'; ?>">Регистрация</a></li>
+                                <li>
+                                    <a href="<?php echo BASE_URL . 'reg.php'; ?>">
+                                        Регистрация
+                                    </a>
+                                </li>
                             </ul>
                         <?php endif; ?>
                     </li>
