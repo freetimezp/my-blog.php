@@ -122,7 +122,7 @@
                 </div>
             </div>
         </div>
-        <div class="sidebar col-12 col-md-3">
+        <div class="sidebar sidebar-main col-12 col-md-3">
             <div class="section search">
                 <h3 class="sidebar-title">Поиск</h3>
                 <form action="/" method="post">
