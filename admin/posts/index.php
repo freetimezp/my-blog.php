@@ -8,9 +8,9 @@
     <div class="row">
         <div class="sidebar sidebar-admin  col-3">
             <ul>
-                <li><a href="#">Записи</a></li>
-                <li><a href="#">Пользователи</a></li>
-                <li><a href="#">Категории</a></li>
+                <li><a href="index.php">Записи</a></li>
+                <li><a href="../users/index.php">Пользователи</a></li>
+                <li><a href="../topics/index.php">Категории</a></li>
             </ul>
         </div>
         <div class="posts posts-admin col-9">
@@ -18,8 +18,8 @@
                 <h3>Управление записями</h3>
             </div>
             <div class="row button">
-                <a href="#" class="col-3 btn btn-primary">Add post</a>
-                <a href="#" class="col-3 btn btn-warning">Manage posts</a>
+                <a href="create.php" class="col-3 btn btn-primary">Add post</a>
+                <a href="index.php" class="col-3 btn btn-warning">Manage posts</a>
             </div>
             <div class="row title-table">
                 <div class="id col-1">id</div>

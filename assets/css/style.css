@@ -488,6 +488,22 @@ header ul li ul li:hover a {
     text-decoration: underline;
 }
 
+.add-post form div, select{
+    margin-bottom: 20px;
+}
+
+.add-topics form div{
+    margin-bottom: 20px;
+}
+
+.add-user form div, select{
+    margin-bottom: 20px;
+}
+
+.ck.ck-editor__main p{
+ min-height: 200px;
+}
+
 
 
 
