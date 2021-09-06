@@ -79,7 +79,7 @@ header ul li a:hover {
 header ul li ul {
     position: absolute;
     top: 70px;
-    right: 77px;
+    right: 303px;
     width: 180px;
     z-index: 10000;
     display: none;

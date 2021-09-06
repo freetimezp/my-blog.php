@@ -6,20 +6,15 @@
 
 <div class="container">
     <div class="row">
-        <div class="sidebar sidebar-admin  col-3">
-            <ul>
-                <li><a href="index.php">Записи</a></li>
-                <li><a href="../users/index.php">Пользователи</a></li>
-                <li><a href="../topics/index.php">Категории</a></li>
-            </ul>
-        </div>
+        <?php include('../../app/include/sidebar-admin.php'); ?>
+
         <div class="posts posts-admin col-9">
             <div class="row title-post">
                 <h3>Управление записями</h3>
             </div>
             <div class="row button">
-                <a href="create.php" class="col-3 btn btn-primary">Add post</a>
-                <a href="index.php" class="col-3 btn btn-warning">Manage posts</a>
+                <a href="<?=BASE_URL . "admin/posts/create.php";?>" class="col-3 btn btn-primary">Add post</a>
+                <a href="<?=BASE_URL . "admin/posts/index.php";?>" class="col-3 btn btn-warning">Manage posts</a>
             </div>
             <div class="row title-table">
                 <div class="id col-1">id</div>
