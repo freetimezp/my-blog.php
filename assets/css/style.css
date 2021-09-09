@@ -504,6 +504,18 @@ header ul li ul li:hover a {
  min-height: 200px;
 }
 
+.posts .row .err {
+    color: red;
+    padding-left: 20px;
+    font-style: italic;
+}
+
+.posts .row  .success {
+    color: #419115;
+    padding-left: 20px;
+    font-style: italic;
+}
+
 
 
 

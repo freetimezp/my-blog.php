@@ -19,7 +19,7 @@ include('../../app/include/header-admin.php');
         </div>
         <div class="posts posts-admin col-9">
             <div class="row title-post">
-                <h3>Добавление категории</h3>
+                <h3>Редактирование категории</h3>
             </div>
             <div class="row">
                 <?php if($msg): ?>
@@ -33,7 +33,10 @@ include('../../app/include/header-admin.php');
                 <a href="index.php" class="col-3 btn btn-warning">Manage topics</a>
             </div>
             <div class="row add-topics">
-                <form action="create.php" method="post">
+                <form action="edit.php" method="post">
+                    <div class="col">
+                        <input name="id" value="<?=$id;?>" type="hidden">
+                    </div>
                     <div class="col">
                         <label for="content" class="form-label">Название категории:</label>
                         <input name="name" value="<?=$name;?>" type="text" class="form-control" placeholder="Введите название категории" aria-label="Название категории">
@@ -43,7 +46,7 @@ include('../../app/include/header-admin.php');
                         <textarea name="description" class="form-control" id="content" rows="6"><?=$description;?></textarea>
                     </div>
                     <div class="col">
-                        <button name="topic-create" class="col-3 btn btn-primary" type="submit">Сохранить</button>
+                        <button name="topic-edit" class="col-3 btn btn-primary" type="submit">Сохранить</button>
                     </div>
                 </form>
             </div>
@@ -52,6 +55,9 @@ include('../../app/include/header-admin.php');
 </div>
 
 <?php include('../../app/include/footer.php'); ?>
+
+
+
 
 
 
