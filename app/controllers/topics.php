@@ -1,7 +1,6 @@
 <?php
 
-include('../../path.php');
-include('../../app/database/db.php');
+include( SITE_ROOT . '/app/database/db.php');
 
 $msg = '';
 $id = '';

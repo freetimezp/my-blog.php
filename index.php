@@ -1,7 +1,11 @@
-<?php include('app/database/db.php'); ?>
-<?php include('path.php'); ?>
+<?php
 
-<?php include('app/include/header.php'); ?>
+include('path.php');
+include('app/controllers/topics.php');
+
+include('app/include/header.php');
+
+?>
 
 <div class="container">
     <div class="row">
@@ -133,14 +137,9 @@
             <div class="section topics">
                 <h3>Категории:</h3>
                 <ul>
-                    <li><a href="#">Мотивация</a></li>
-                    <li><a href="#">Персоны</a></li>
-                    <li><a href="#">Уроки жизни</a></li>
-                    <li><a href="#">Смешно</a></li>
-                    <li><a href="#">Интересно</a></li>
-                    <li><a href="#">Музыка</a></li>
-                    <li><a href="#">Фильмы</a></li>
-                    <li><a href="#">Игры</a></li>
+                    <?php foreach ($topics as $key => $topic): ?>
+                        <li><a href="#"><?=$topic['name'];?></a></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
         </div>
