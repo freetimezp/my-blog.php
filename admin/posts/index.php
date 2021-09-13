@@ -1,8 +1,8 @@
-<?php include('../../app/database/db.php'); ?>
-<?php include('../../path.php'); ?>
-
-<?php session_start(); ?>
-<?php include('../../app/include/header-admin.php'); ?>
+<?php
+include('../../path.php');
+include('../../app/controllers/posts.php');
+include('../../app/include/header-admin.php');
+?>
 
 <div class="container">
     <div class="row">
@@ -18,36 +18,24 @@
             </div>
             <div class="row title-table">
                 <div class="id col-1">id</div>
-                <div class="col-5">title</div>
+                <div class="col-4">title</div>
                 <div class="col-2">author</div>
-                <div class="col-2">date</div>
+                <div class="col-2">topic</div>
+                <div class="col-1">date</div>
                 <div class="col-1">edit</div>
                 <div class="col-1">delete</div>
             </div>
-            <div class="row post">
-                <div class="id col-1">1</div>
-                <div class="title col-5">Название статьи</div>
-                <div class="author col-2">Глебов</div>
-                <div class="date col-2">21.01.2021</div>
-                <div class="edit col-1"><a href="#">edit</a></div>
-                <div class="delete col-1"><a href="#">delete</a></div>
-            </div>
-            <div class="row post">
-                <div class="id col-1">2</div>
-                <div class="title col-5">Название статьи</div>
-                <div class="author col-2">Глебов</div>
-                <div class="date col-2">21.01.2021</div>
-                <div class="edit col-1"><a href="#">edit</a></div>
-                <div class="delete col-1"><a href="#">delete</a></div>
-            </div>
-            <div class="row post">
-                <div class="id col-1">3</div>
-                <div class="title col-5">Название статьи</div>
-                <div class="author col-2">Глебов</div>
-                <div class="date col-2">21.01.2021</div>
-                <div class="edit col-1"><a href="#">edit</a></div>
-                <div class="delete col-1"><a href="#">delete</a></div>
-            </div>
+            <?php foreach ($posts as $key => $post): ?>
+                <div class="row post">
+                    <div class="id col-1">1</div>
+                    <div class="title col-4"><?=$post['title'];?></div>
+                    <div class="author col-2">Глебов</div>
+                    <div class="col-2">video</div>
+                    <div class="date col-1">21.01.2021</div>
+                    <div class="edit col-1"><a href="#">edit</a></div>
+                    <div class="delete col-1"><a href="#">delete</a></div>
+                </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </div>

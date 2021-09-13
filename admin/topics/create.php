@@ -2,7 +2,6 @@
 
 include('../../path.php');
 include('../../app/controllers/topics.php');
-session_start();
 
 include('../../app/include/header-admin.php');
 ?>

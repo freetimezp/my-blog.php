@@ -1,8 +1,11 @@
-<?php include('../../app/database/db.php'); ?>
-<?php include('../../path.php'); ?>
+<?php
 
-<?php session_start(); ?>
-<?php include('../../app/include/header-admin.php'); ?>
+include('../../path.php');
+
+include('../../app/controllers/posts.php');
+
+include('../../app/include/header-admin.php');
+?>
 
 <div class="container">
     <div class="row">
@@ -25,24 +28,24 @@
                 <form action="create.php" method="post">
                     <div class="col">
                         <label for="content" class="form-label">Название статьи:</label>
-                        <input type="text" class="form-control" placeholder="Введите название статьи" aria-label="Название статьи">
+                        <input name="title" type="text" class="form-control" placeholder="Введите название статьи" aria-label="Название статьи">
                     </div>
                     <div class="col">
                         <label for="editor" class="form-label">Содержание статьи:</label>
-                        <textarea class="form-control" id="editor" rows="6"></textarea>
+                        <textarea name="content" class="form-control" id="editor" rows="6"></textarea>
                     </div>
                     <div class="input-group col">
-                        <input type="file" class="form-control" id="inputGroupFile02">
+                        <input name="img" type="file" class="form-control" id="inputGroupFile02">
                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
                     </div>
-                    <select class="form-select col" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select name="topic" class="form-select col" aria-label="Default select example">
+                        <option selected>Выберите категорию</option>
+                        <?php foreach ($topics as $key => $topic): ?>
+                            <option value="<?=$topic['id'];?>"><?=$topic['name'];?></option>
+                        <?php endforeach; ?>
                     </select>
                     <div class="col">
-                        <a href="#" class="col-3 btn btn-primary" type="submit">Сохранить</a>
+                        <button name="add-post" class="col-3 btn btn-primary" type="submit">Сохранить</button>
                     </div>
                 </form>
             </div>
