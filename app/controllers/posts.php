@@ -13,6 +13,9 @@ $successMsg = '';
 
 $topics = selectAll('topics');
 $posts = selectAll('posts');
+$postsAdm = selectAllFromPostsWithUsers('posts', 'users');
+
+//tt($postsAdm);
 
 // создание поста
 
@@ -22,6 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-post'])) {
     $content = trim($_POST['content']);
     $topic = trim($_POST['topic']);
     $img = trim($_POST['img']);
+    $status = isset($_POST['publish']) ? 1 : 0;
 
     $id_user = trim($_SESSION['id']);
 
@@ -38,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-post'])) {
             'title' => $title,
             'content' => $content,
             'img' => $img,
-            'status' => 1,
+            'status' => $status,
             'id_topic' => $topic
         ];
 

@@ -44,6 +44,10 @@ include('../../app/include/header-admin.php');
                             <option value="<?=$topic['id'];?>"><?=$topic['name'];?></option>
                         <?php endforeach; ?>
                     </select>
+                    <div class="row publish form-check">
+                        <input class="col-1 form-check-input" type="checkbox" name="publish" id="publish" value="1" checked>
+                        <label class="col-2 form-check-label" for="publish">publish</label>
+                    </div>
                     <div class="col">
                         <button name="add-post" class="col-3 btn btn-primary" type="submit">Сохранить</button>
                     </div>

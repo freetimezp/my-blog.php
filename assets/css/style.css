@@ -516,6 +516,10 @@ header ul li ul li:hover a {
     font-style: italic;
 }
 
+.publish {
+    align-items: center;
+    margin-left: 10px;
+}
 
 
 
