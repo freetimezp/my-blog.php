@@ -18,10 +18,10 @@ include('../../app/include/header-admin.php');
             </div>
             <div class="row title-table">
                 <div class="id col-1">id</div>
-                <div class="col-3">title</div>
+                <div class="col-2">title</div>
                 <div class="col-2">author</div>
                 <div class="col-1">topic</div>
-                <div class="col-1">date</div>
+                <div class="col-2">date</div>
                 <div class="col-1">edit</div>
                 <div class="col-1">delete</div>
                 <div class="topic col-2">status</div>
@@ -29,10 +29,10 @@ include('../../app/include/header-admin.php');
             <?php foreach ($postsAdm as $key => $post): ?>
                 <div class="row post">
                     <div class="id col-1"><?=$key + 1;?></div>
-                    <div class="title col-3"><?=$post['title'];?></div>
+                    <div class="title col-2"><?=$post['title'];?></div>
                     <div class="author col-2"><?=$post['username'];?></div>
-                    <div class="topic col-1">video</div>
-                    <div class="date col-1">21.01.2021</div>
+                    <div class="topic col-1"><?=$topics[$post['id_topic']]['name'];?></div>
+                    <div class="date col-2"><?=$post['created_date'];?></div>
                     <div class="edit col-1"><a href="#">edit</a></div>
                     <div class="delete col-1"><a href="#">delete</a></div>
 
