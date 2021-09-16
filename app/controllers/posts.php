@@ -2,6 +2,10 @@
 
 include(SITE_ROOT . '/app/database/db.php');
 
+if(!$_SESSION){
+    header('location: ' . BASE_URL . 'auth.php');
+}
+
 $msg = '';
 $id = '';
 $title = '';
@@ -20,6 +24,27 @@ $postsAdm = selectAllFromPostsWithUsers('posts', 'users');
 // создание поста
 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-post'])) {
+
+    if(!empty($_FILES['img']['name'])) {
+        $imgName = time() . '_' . $_FILES['img']['name'];
+        $fileTmpName = $_FILES['img']['tmp_name'];
+        $fileType = $_FILES['img']['type'];
+        $destination = ROOT_PATH . "\assets\images\posts\\" . $imgName;
+
+        if(strpos($fileType, 'image') === false) {
+            die("Загружать можно только изображения");
+        }else{
+            $result = move_uploaded_file($fileTmpName, $destination);
+
+            if($result) {
+                $_POST['img'] = $imgName;
+            }else{
+                $msg = "Ошибка загрузки изображения на сервер!";
+            }
+        }
+    }else{
+        $msg = "Ошибка добавления изображения! Попробуйте еще раз!";
+    }
 
     $title = trim($_POST['title']);
     $content = trim($_POST['content']);
