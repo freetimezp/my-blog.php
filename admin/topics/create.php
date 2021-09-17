@@ -20,18 +20,14 @@ include('../../app/include/header-admin.php');
             <div class="row title-post">
                 <h3>Добавление категории</h3>
             </div>
-            <div class="row">
-                <?php if($msg): ?>
-                    <p class="err"><?=$msg; ?></p>
-                <?php else: ?>
-                    <p class="success"><?=$successMsg; ?></p>
-                <?php endif; ?>
-            </div>
             <div class="row button">
                 <a href="create.php" class="col-3 btn btn-primary">Add topics</a>
                 <a href="index.php" class="col-3 btn btn-warning">Manage topics</a>
             </div>
             <div class="row add-topics">
+                <div class="col-12 col-md=12 err">
+                    <?php include("../../app/helps/errorInfo.php");?>
+                </div>
                 <form action="create.php" method="post">
                     <div class="col">
                         <label for="content" class="form-label">Название категории:</label>

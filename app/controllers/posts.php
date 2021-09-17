@@ -6,7 +6,7 @@ if(!$_SESSION){
     header('location: ' . BASE_URL . 'auth.php');
 }
 
-$msg = '';
+$msg = [];
 $id = '';
 $title = '';
 $content = '';
@@ -32,18 +32,18 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-post'])) {
         $destination = ROOT_PATH . "\assets\images\posts\\" . $imgName;
 
         if(strpos($fileType, 'image') === false) {
-            die("Загружать можно только изображения");
+            array_push($msg, "Загружать можно только изображения");
         }else{
             $result = move_uploaded_file($fileTmpName, $destination);
 
             if($result) {
                 $_POST['img'] = $imgName;
             }else{
-                $msg = "Ошибка загрузки изображения на сервер!";
+                array_push($msg, "Ошибка загрузки изображения на сервер!");
             }
         }
     }else{
-        $msg = "Ошибка добавления изображения! Попробуйте еще раз!";
+        array_push($msg, "При желании вы можете добавить изображение к статье!");
     }
 
     $title = trim($_POST['title']);
@@ -58,9 +58,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-post'])) {
 //    exit();
 
     if($title === '' || $content === '' || $topic === '') {
-        $msg = "Не все поля заполнены!";
+        array_push($msg, "Не все поля заполнены!");
     }elseif(mb_strlen($title, 'UTF-8') < 3 ){
-        $msg = "Категория должна содержать 3 или более символов!";
+        array_push($msg, "Название должно содержать 3 или более символов!");
+    }elseif($topic === 'Выберите категорию'){
+        array_push($msg, "Выберите категорию!");
     }else{
         $post = [
             'id_user' => $id_user,
@@ -105,15 +107,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['topic-edit'])) {
     $description = trim($_POST['description']);
 
     if($name === '' || $description === '') {
-        $msg = "Не все поля заполнены!";
+        array_push($msg, "Не все поля заполнены!");
     }elseif(mb_strlen($name, 'UTF-8') < 3 ){
-        $msg = "Категория должна содержать 3 или более символов!";
+        array_push($msg, "Категория должна содержать 3 или более символов!");
     }else{
         $existance = selectOne('topics', ['name' => $name]);
         //tt($existance);
 
         if($existance['name'] === $name) {
-            $errMsg = "Такая категория уже существует!";
+            array_push($msg, "Такая категория уже существует!");
         }else{
             $topic = [
                 'name' => $name,

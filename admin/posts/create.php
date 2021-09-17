@@ -25,14 +25,17 @@ include('../../app/include/header-admin.php');
                 <a href="index.php" class="col-3 btn btn-warning">Manage posts</a>
             </div>
             <div class="row add-post">
+                <div class="col-12 col-md=12 err">
+                    <?php include("../../app/helps/errorInfo.php");?>
+                </div>
                 <form action="create.php" method="post" enctype="multipart/form-data">
                     <div class="col">
                         <label for="content" class="form-label">Название статьи:</label>
-                        <input name="title" type="text" class="form-control" placeholder="Введите название статьи" aria-label="Название статьи">
+                        <input value="<?=$title;?>" name="title" type="text" class="form-control" placeholder="Введите название статьи" aria-label="Название статьи">
                     </div>
                     <div class="col">
                         <label for="editor" class="form-label">Содержание статьи:</label>
-                        <textarea name="content" class="form-control" id="editor" rows="6"></textarea>
+                        <textarea name="content" class="form-control" id="editor" rows="6"><?=$content;?></textarea>
                     </div>
                     <div class="input-group col">
                         <input name="img" type="file" class="form-control" id="inputGroupFile02">

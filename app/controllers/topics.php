@@ -2,7 +2,7 @@
 
 include( SITE_ROOT . '/app/database/db.php');
 
-$msg = '';
+$msg = [];
 $id = '';
 $name = '';
 $description = '';
@@ -23,15 +23,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['topic-create'])) {
     $description = trim($_POST['description']);
 
     if($name === '' || $description === '') {
-        $msg = "Не все поля заполнены!";
+        array_push($msg, "Не все поля заполнены!");
     }elseif(mb_strlen($name, 'UTF-8') < 3 ){
-        $msg = "Категория должна содержать 3 или более символов!";
+        array_push($msg, "Категория должна содержать 3 или более символов!");
     }else{
         $existance = selectOne('topics', ['name' => $name]);
         //tt($existance);
 
-        if($existance['name'] === $name) {
-            $errMsg = "Такая категория уже существует!";
+        if($existance['name'] === $name || strcasecmp($existance['name'], $name) == 0) {
+            array_push($msg, "Такая категория уже существует!");
         }else{
             $post = [
                 'name' => $name,
@@ -71,16 +71,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['topic-edit'])) {
     $name = trim($_POST['name']);
     $description = trim($_POST['description']);
 
+
     if($name === '' || $description === '') {
-        $msg = "Не все поля заполнены!";
+        array_push($msg, "Не все поля заполнены!");
     }elseif(mb_strlen($name, 'UTF-8') < 3 ){
-        $msg = "Категория должна содержать 3 или более символов!";
+        array_push($msg, "Категория должна содержать 3 или более символов!");
     }else{
         $existance = selectOne('topics', ['name' => $name]);
         //tt($existance);
 
-        if($existance['name'] === $name) {
-            $errMsg = "Такая категория уже существует!";
+        if($existance['name'] === $name || strcasecmp($existance['name'], $name) == 0)  {
+            array_push($msg, "Такая категория уже существует!");
         }else{
             $topic = [
                 'name' => $name,
