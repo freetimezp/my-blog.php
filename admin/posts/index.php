@@ -31,15 +31,15 @@ include('../../app/include/header-admin.php');
                     <div class="id col-1"><?=$key + 1;?></div>
                     <div class="title col-2"><?=$post['title'];?></div>
                     <div class="author col-2"><?=$post['username'];?></div>
-                    <div class="topic col-1"><?=$topics[$post['id_topic']]['name'];?></div>
+                    <div class="topic col-1"><?=$topics[$post['id_topic'] - 1]['name'];?></div>
                     <div class="date col-2"><?=$post['created_date'];?></div>
-                    <div class="edit col-1"><a href="#">edit</a></div>
-                    <div class="delete col-1"><a href="#">delete</a></div>
+                    <div class="edit col-1"><a href="edit.php?id=<?=$post['id'];?>">edit</a></div>
+                    <div class="delete col-1"><a href="edit.php?del_id=<?=$post['id'];?>">delete</a></div>
 
                     <?php if($post['status']): ?>
-                        <div class="status col-2"><a href="#">unpublish</a></div>
+                        <div class="status col-2"><a href="edit.php?status=0&publish_id=<?=$post['id'];?>">unpublish</a></div>
                     <?php else: ?>
-                        <div class="status col-2"><a href="#">publish</a></div>
+                        <div class="status col-2"><a href="edit.php?status=1&publish_id=<?=$post['id'];?>">publish</a></div>
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>

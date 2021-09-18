@@ -112,7 +112,7 @@ function insert($table, $params) {
     return $pdo->lastInsertId();
 }
 
-function update($table, $id, $params) {
+function update($table, $id, $params = []) {
     global $pdo;
 
     $i = 0;
