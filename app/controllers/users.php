@@ -1,8 +1,8 @@
 <?php
 
-include('app/database/db.php');
+include('../../app/database/db.php');
 
-$errMsg = '';
+$msg = [];
 $successMsg = '';
 
 function userAuth($arr) {
@@ -17,6 +17,8 @@ function userAuth($arr) {
     }
 }
 
+//регистрация пользователя
+
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
     $admin = 0;
     $login = trim($_POST['login']);
@@ -25,30 +27,30 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])) {
     $passS = trim($_POST['pass-second']);
 
     if($login === '' || $email === '' || $passF === '') {
-        $errMsg = "Не все поля заполнены!";
+        array_push($msg, "Не все поля заполнены!");
     }elseif(mb_strlen($login, 'UTF-8') < 5 ){
-        $errMsg = "Логин должен содержать 5 или более символов!";
+        array_push($msg, "Логин должен содержать 5 или более символов!");
     }elseif($passF !== $passS){
-        $errMsg = "Введенные пароли отличаются! Введите их еще раз.";
+        array_push($msg, "Введенные пароли отличаются! Введите их еще раз.");
     }elseif(mb_strlen($passF, 'UTF-8') < 6 ){
-        $errMsg = "Введите пароль больше 5 символов!";
+        array_push($msg, "Введите пароль больше 5 символов!");
     }else{
         $existance = selectOne('users', ['email' => $email]);
         //tt($existance);
 
         if($existance['email'] === $email) {
-            $errMsg = "Пользователь с такой электронной почтой уже существует!";
+            array_push($msg, "Пользователь с такой электронной почтой уже существует!");
         }else{
             $passHash = password_hash($passF, PASSWORD_DEFAULT);
 
-            $post = [
+            $user = [
                 'admin' => $admin,
                 'username' => $login,
                 'email' => $email,
                 'password' => $passHash
             ];
 
-            $id = insert('users', $post);
+            $id = insert('users', $user);
             $successMsg = "Пользователь $login успешно зарегистрирован!";
 
             $user = selectOne('users', ['id' => $id]);
@@ -68,7 +70,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
     $pass = trim($_POST['password']);
 
     if($email === '' || $pass === '') {
-        $errMsg = "Не все поля заполнены!";
+        array_push($msg, "Не все поля заполнены!");
     }else{
         $existance = selectOne('users', ['email' => $email]);
 //        tt($existance);
@@ -76,9 +78,62 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])) {
         if($existance && password_verify($pass ,$existance['password'])) {
             userAuth($existance);
         }else{
-            $errMsg = 'Ошибка авторизации';
+            array_push($msg, "Ошибка авторизации");
         }
     }
 }else{
+    $email = '';
+}
+
+//создание пользователя
+
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create-user'])) {
+
+    $admin = 0;
+    $login = trim($_POST['login']);
+    $email = trim($_POST['email']);
+    $passF = trim($_POST['pass-first']);
+    $passS = trim($_POST['pass-second']);
+
+    if($login === '' || $email === '' || $passF === '') {
+        array_push($msg, "Не все поля заполнены!");
+    }elseif(mb_strlen($login, 'UTF-8') < 5 ){
+        array_push($msg, "Логин должен содержать 5 или более символов!");
+    }elseif($passF !== $passS){
+        array_push($msg, "Введенные пароли отличаются! Введите их еще раз.");
+    }elseif(mb_strlen($passF, 'UTF-8') < 6 ){
+        array_push($msg, "Введите пароль больше 5 символов!");
+    }else{
+        $existance = selectOne('users', ['email' => $email]);
+        //tt($existance);
+
+        if($existance['email'] === $email) {
+            array_push($msg, "Пользователь с такой электронной почтой уже существует!");
+        }else{
+            $passHash = password_hash($passF, PASSWORD_DEFAULT);
+
+            if(isset($_POST['admin'])) {
+                $admin = 1;
+            }
+
+            $user = [
+                'admin' => $admin,
+                'username' => $login,
+                'email' => $email,
+                'password' => $passHash
+            ];
+
+            $id = insert('users', $user);
+            $successMsg = "Пользователь $login успешно зарегистрирован!";
+
+            $user = selectOne('users', ['id' => $id]);
+
+            userAuth($user);
+        }
+        //tt($post);
+    }
+    //$lastRow = selectOne('users', ['id' => $id]);
+}else{
+    $login = '';
     $email = '';
 }

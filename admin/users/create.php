@@ -1,8 +1,9 @@
-<?php include('../../app/database/db.php'); ?>
-<?php include('../../path.php'); ?>
-
-<?php session_start(); ?>
-<?php include('../../app/include/header-admin.php'); ?>
+<?php
+session_start();
+include('../../path.php');
+include('../../app/controllers/users.php');
+include('../../app/include/header-admin.php');
+?>
 
 <div class="container">
     <div class="row">
@@ -22,6 +23,9 @@
                 <a href="index.php" class="col-3 btn btn-warning">Manage users</a>
             </div>
             <div class="row add-user">
+                <div class="col-12 col-md=12 err">
+                    <?php include("../../app/helps/errorInfo.php");?>
+                </div>
                 <form action="create.php" method="post">
                     <div class="col">
                         <label for="formGroupExampleInput" class="form-label">Ваш логин</label>
@@ -31,11 +35,11 @@
                         <label for="exampleInputEmail1" class="form-label">Ваш электронный ящик</label>
                         <input name="email" value="<?=$email;?>" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите email..">
                     </div>
-                    <select class="form-select col" aria-label="Default select example">
-                        <option selected>Выберите роль</option>
-                        <option value="1">user</option>
-                        <option value="2">admin</option>
-                    </select>
+                    <label>Выберите роль</label>
+                    <div class="row publish form-check">
+                        <input class="col-1 form-check-input" type="checkbox" value="1" name="admin" id="admin">
+                        <label class="col-2 form-check-label" for="admin">admin</label>
+                    </div>
                     <div class="col">
                         <label for="exampleInputPassword1" class="form-label">Пароль</label>
                         <input name="pass-first" type="password" class="form-control" id="exampleInputPassword1" placeholder="Введите пароль..">
@@ -45,7 +49,7 @@
                         <input name="pass-second" type="password" class="form-control" id="exampleInputPassword2" placeholder="Введите пароль повторно..">
                     </div>
                     <div class="col">
-                        <a href="#" class="col-3 btn btn-primary" type="submit">Сохранить</a>
+                        <button name="create-user" class="col-3 btn btn-primary" type="submit">Сохранить</button>
                     </div>
                 </form>
             </div>
