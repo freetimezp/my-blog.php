@@ -4,6 +4,9 @@ include('../../app/database/db.php');
 
 $msg = [];
 $successMsg = '';
+$id = '';
+
+$users = selectAll('users');
 
 function userAuth($arr) {
     $_SESSION['id'] = $arr['id'];
@@ -136,4 +139,72 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create-user'])) {
 }else{
     $login = '';
     $email = '';
+}
+
+//редактирование пользователя
+
+if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['edit_id'])) {
+    $id = $_GET['edit_id'];
+    $user = selectOne('users', ['id' => $id]);
+    //tt($post);
+
+    $id = $user['id'];
+    $login = $user['username'];
+    $email = $user['email'];
+    $admin = $user['admin'];
+}
+
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit-user'])) {
+
+    //tt($_POST);
+    $id = trim($_POST['id']);
+
+    $login = trim($_POST['login']);
+    $email = trim($_POST['email']);
+    $admin = isset($_POST['admin']) ? 1 : 0;
+    $passF = trim($_POST['pass-first']);
+    $passS = trim($_POST['pass-second']);
+
+    $id_user = $_SESSION['id'];
+
+//    tt($_POST);
+
+    if($login === '') {
+        array_push($msg, "Не все поля заполнены!");
+    }elseif(mb_strlen($login, 'UTF-8') < 5 ){
+        array_push($msg, "Ник пользователя должен содержать 5 или более символов!");
+    }elseif($passF !== $passS){
+        array_push($msg, "Введенные пароли отличаются! Введите их еще раз.");
+    }else{
+        $passHash = password_hash($passF, PASSWORD_DEFAULT);
+
+        if(isset($_POST['admin'])) {
+            $admin = 1;
+        }
+
+        $user = [
+            'admin' => $admin,
+            'username' => $login,
+            'email' => $email,
+            'password' => $passHash
+        ];
+
+        $user = update('users', $id, $user);
+        $successMsg = "Пользователь $user успешно изменен!";
+
+        header('location: ' . BASE_URL . 'admin/users/index.php');
+
+        //tt($post);
+    }
+}else{
+//    $login = '';
+//    $email = '';
+}
+
+//удаление пользователя
+
+if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['delete_id'])) {
+    $id = $_GET['delete_id'];
+    delete('users', $id);
+    header('location: ' . BASE_URL . 'admin/users/index.php');
 }

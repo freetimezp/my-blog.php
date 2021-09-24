@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a177c988-ff91-45f0-af16-03d941daf197" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/users/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/users/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/users/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/users.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,6 +105,7 @@
       <workItem from="1631897420280" duration="4497000" />
       <workItem from="1631979629598" duration="10071000" />
       <workItem from="1632419406615" duration="2528000" />
+      <workItem from="1632511108305" duration="6599000" />
     </task>
     <servers />
   </component>
@@ -183,10 +185,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1631990742079" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1631981028298">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1632512777511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1631981028298" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1632512777511" />
     <state x="667" y="253" width="585" height="534" key="find.popup" timestamp="1631989295978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
