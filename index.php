@@ -2,8 +2,9 @@
 
 include('path.php');
 include('app/controllers/topics.php');
-
 include('app/include/header.php');
+
+$posts = selectAll('posts', ['status' => 1]);
 
 ?>
 
@@ -47,84 +48,48 @@ include('app/include/header.php');
     <div class="content row">
         <div class="main-content col-12 col-md-9">
             <h2 class="main-content-title">Последние публикации</h2>
-            <div class="post row">
-                <div class="img col-12 col-md-3">
-                    <img src="assets/images/post-1.jpg" alt="" class="img-thumbnail">
+
+            <?php foreach ($posts as $key => $post): ?>
+                <?php $user = selectOne('users', ['id' => $post['id_user']]); ?>
+                <?php $topic = selectOne('topics', ['id' => $post['id_topic']]); ?>
+                <div class="post row">
+                    <div class="img col-12 col-md-3">
+                        <img src="assets/images/posts/<?=$post['img'];?>" alt="<?=$post['img'];?>" class="img-thumbnail">
+                    </div>
+                    <div class="post_text col-12 col-md-9">
+                        <h3>
+                            <a href="<?=BASE_URL . 'single.php?post_id=' . $post['id']; ?>">
+                                <?php if(strlen($post['title']) > 30): ?>
+                                    <?=mb_substr($post['title'], 0, 30, "UTF-8") . '...';?>
+                                <?php else: ?>
+                                    <?=$post['title'];?>
+                                <? endif; ?>
+                            </a>
+                        </h3>
+                        <i class="far fa-user">
+                            <span>
+                                <?=$user['username'];?>
+                            </span>
+                        </i>
+                        <i class="far fa-calendar">
+                            <span>
+                                <?=$post['created_date'];?>
+                            </span>
+                        </i>
+                        <i class="post-topic">
+                            <?=$topic['name'];?>
+                        </i>
+                        <p class="preview-text">
+                            <?php if(strlen($post['content']) > 300): ?>
+                                <?=mb_substr($post['content'], 0, 300, "UTF-8") . '...';?>
+                            <?php else: ?>
+                                <?=$post['content'];?>
+                            <? endif; ?>
+                        </p>
+                    </div>
                 </div>
-                <div class="post_text col-12 col-md-9">
-                    <h3>
-                        <a href="single.php">Статья на тему создания динамического сайта...</a>
-                    </h3>
-                    <i class="far fa-user">
-                        <span>
-                            Имя автора
-                        </span>
-                    </i>
-                    <i class="far fa-calendar">
-                        <span>
-                            21.08.2021
-                        </span>
-                    </i>
-                    <p class="preview-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Ad aliquam dolores impedit incidunt perferendis quisquam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Ad aliquam dolores impedit incidunt perferendis quisquam vero.
-                    </p>
-                </div>
-            </div>
-            <div class="post row">
-                <div class="img col-12 col-md-3">
-                    <img src="assets/images/post-1.jpg" alt="" class="img-thumbnail">
-                </div>
-                <div class="post_text col-12 col-md-9">
-                    <h3>
-                        <a href="#">Статья на тему создания динамического сайта...</a>
-                    </h3>
-                    <i class="far fa-user">
-                        <span>
-                            Имя автора
-                        </span>
-                    </i>
-                    <i class="far fa-calendar">
-                        <span>
-                            21.08.2021
-                        </span>
-                    </i>
-                    <p class="preview-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Ad aliquam dolores impedit incidunt perferendis quisquam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Ad aliquam dolores impedit incidunt perferendis quisquam vero.
-                    </p>
-                </div>
-            </div>
-            <div class="post row">
-                <div class="img col-12 col-md-3">
-                    <img src="assets/images/post-1.jpg" alt="" class="img-thumbnail">
-                </div>
-                <div class="post_text col-12 col-md-9">
-                    <h3>
-                        <a href="#">Статья на тему создания динамического сайта...</a>
-                    </h3>
-                    <i class="far fa-user">
-                        <span>
-                            Имя автора
-                        </span>
-                    </i>
-                    <i class="far fa-calendar">
-                        <span>
-                            21.08.2021
-                        </span>
-                    </i>
-                    <p class="preview-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Ad aliquam dolores impedit incidunt perferendis quisquam vero.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Ad aliquam dolores impedit incidunt perferendis quisquam vero.
-                    </p>
-                </div>
-            </div>
+            <?php endforeach; ?>
+
         </div>
         <div class="sidebar sidebar-main col-12 col-md-3">
             <div class="section search">

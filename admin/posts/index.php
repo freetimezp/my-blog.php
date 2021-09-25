@@ -29,7 +29,13 @@ include('../../app/include/header-admin.php');
             <?php foreach ($postsAdm as $key => $post): ?>
                 <div class="row post">
                     <div class="id col-1"><?=$key + 1;?></div>
-                    <div class="title col-2"><?=$post['title'];?></div>
+                    <div class="title col-2">
+                        <?php if(strlen($post['title']) > 20): ?>
+                            <?=mb_substr($post['title'], 0, 20, "UTF-8") . '...';?>
+                        <?php else: ?>
+                            <?=$post['title'];?>
+                        <? endif; ?>
+                    </div>
                     <div class="author col-2"><?=$post['username'];?></div>
                     <div class="topic col-1"><?=$topics[$post['id_topic'] - 1]['name'];?></div>
                     <div class="date col-2"><?=$post['created_date'];?></div>
