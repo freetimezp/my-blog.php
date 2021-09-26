@@ -5,6 +5,7 @@ include('app/controllers/topics.php');
 include('app/include/header.php');
 
 $posts = selectAll('posts', ['status' => 1]);
+$sliderTopics = selectTopicsToSlider('posts');
 
 ?>
 
@@ -14,24 +15,28 @@ $posts = selectAll('posts', ['status' => 1]);
     </div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets/images/slide-1.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5><a href="#">First slide label</a></h5>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/images/slide-2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5><a href="#">Second slide label</a></h5>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/images/slide-3.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5><a href="#">Third slide label</a></h5>
-                </div>
-            </div>
+
+            <?php foreach ($sliderTopics as $key => $post): ?>
+                <?php if($key == 0): ?>
+                    <div class="carousel-item active">
+                <?php else: ?>
+                    <div class="carousel-item">
+                <?php endif; ?>
+                        <img src="assets/images/posts/<?=$post['img'];?>" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>
+                                <a href="<?=BASE_URL . 'single.php?post_id=' . $post['id']; ?>">
+                                    <?php if(strlen($post['title']) > 30): ?>
+                                        <?=mb_substr($post['title'], 0, 30, "UTF-8") . '...';?>
+                                    <?php else: ?>
+                                        <?=$post['title'];?>
+                                    <? endif; ?>
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+            <?php endforeach; ?>
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

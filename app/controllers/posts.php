@@ -88,6 +88,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-post'])) {
     $content = '';
     $status = '';
     $topic = '';
+    $img = '';
 }
 
 // редактирование записи

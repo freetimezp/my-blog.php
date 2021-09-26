@@ -27,6 +27,7 @@ include('../../app/include/header-admin.php');
                 <div class="topic col-2">status</div>
             </div>
             <?php foreach ($postsAdm as $key => $post): ?>
+                <?php $topic = $topics[$post['id_topic'] - 1]['name'];?>
                 <div class="row post">
                     <div class="id col-1"><?=$key + 1;?></div>
                     <div class="title col-2">
@@ -37,7 +38,7 @@ include('../../app/include/header-admin.php');
                         <? endif; ?>
                     </div>
                     <div class="author col-2"><?=$post['username'];?></div>
-                    <div class="topic col-1"><?=$topics[$post['id_topic'] - 1]['name'];?></div>
+                    <div class="topic col-1"><?=$topic;?></div>
                     <div class="date col-2"><?=$post['created_date'];?></div>
                     <div class="edit col-1"><a href="edit.php?id=<?=$post['id'];?>">edit</a></div>
                     <div class="delete col-1"><a href="edit.php?del_id=<?=$post['id'];?>">delete</a></div>

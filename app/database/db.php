@@ -156,6 +156,18 @@ function selectAllFromPostsWithUsers($table1, $table2) {
     return $query->fetchAll();
 }
 
+function selectTopicsToSlider($table) {
+    global $pdo;
+
+    $sql = "SELECT * FROM $table WHERE id_topic = 5";
+
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
+
+    return $query->fetchAll();
+}
+
 
 
 
