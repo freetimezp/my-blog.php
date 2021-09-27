@@ -20,32 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a177c988-ff91-45f0-af16-03d941daf197" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/posts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/posts/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/database/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1556784857_3162.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631813521_1556784857_3162.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631898889_7d44810e6005055f7c42d674503494cb.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631898937_gifki-s-dnem-rozhdeniya-zhenshhine-krasivye-35.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631898951_720361002.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631899315_unnamed.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631899399_unnamed.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631987918_21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631987937_21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631988013_21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631988041_21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631988052_611738665.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631988233_611738665.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631988259_unnamed.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631988385_unnamed.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631988454_21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1631988867_21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1632594788_21.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1632594817_unnamed.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/1632594842_birthday-1251.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/720361002.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/posts/birthday-1251.gif_1631813468" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,15 +60,16 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\openserver\OSPanel\domains\my-blog.php\app\controllers" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\openserver\OSPanel\domains\my-blog.php\assets" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\openserver\OSPanel\domains\my-blog.php" />
+      <recent name="C:\openserver\OSPanel\domains\my-blog.php\app\controllers" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -131,6 +109,7 @@
       <workItem from="1632511108305" duration="6599000" />
       <workItem from="1632592396855" duration="5669000" />
       <workItem from="1632673474980" duration="5521000" />
+      <workItem from="1632762870280" duration="3057000" />
     </task>
     <servers />
   </component>

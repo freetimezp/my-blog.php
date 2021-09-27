@@ -99,7 +99,7 @@ $sliderTopics = selectTopicsToSlider('posts');
         <div class="sidebar sidebar-main col-12 col-md-3">
             <div class="section search">
                 <h3 class="sidebar-title">Поиск</h3>
-                <form action="/" method="post">
+                <form action="search.php" method="post">
                     <input type="text" name="search-form" class="text-input" placeholder="Поиск...">
                 </form>
             </div>
