@@ -4,56 +4,23 @@ include('path.php');
 include('app/controllers/topics.php');
 include('app/include/header.php');
 
-$posts = selectAll('posts', ['status' => 1]);
-$sliderTopics = selectTopicsToSlider('posts');
+$posts = selectAll('posts', [
+        'id_topic' => $_GET['topic_id'],
+        'status' => 1
+]);
+$topic = selectOne('topics', ['id' => $_GET['topic_id']]);
 
 ?>
 
 <div class="container">
-    <div class="row">
-        <h2 class="slider-title">Топ публикации</h2>
-    </div>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-
-            <?php foreach ($sliderTopics as $key => $post): ?>
-                <?php if($key == 0): ?>
-                    <div class="carousel-item active">
-                <?php else: ?>
-                    <div class="carousel-item">
-                <?php endif; ?>
-                        <img src="assets/images/posts/<?=$post['img'];?>" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>
-                                <a href="<?=BASE_URL . 'single.php?post_id=' . $post['id']; ?>">
-                                    <?php if(strlen($post['title']) > 30): ?>
-                                        <?=mb_substr($post['title'], 0, 30, "UTF-8") . '...';?>
-                                    <?php else: ?>
-                                        <?=$post['title'];?>
-                                    <? endif; ?>
-                                </a>
-                            </h5>
-                        </div>
-                    </div>
-            <?php endforeach; ?>
-
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
-
-<div class="container">
     <div class="content row">
         <div class="main-content col-12 col-md-9">
-            <h2 class="main-content-title">Последние публикации</h2>
-
+            <h2 class="main-content-title">Последние публикации категории - <?=$topic['name'];?></h2>
+            <?php if(empty($posts)): ?>
+                <div class="col-12">
+                    В данной категории еще нет статей или они еще не готовы к публикации.
+                </div>
+            <? endif; ?>
             <?php foreach ($posts as $key => $post): ?>
                 <?php $user = selectOne('users', ['id' => $post['id_user']]); ?>
                 <?php $topic = selectOne('topics', ['id' => $post['id_topic']]); ?>
