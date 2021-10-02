@@ -198,7 +198,51 @@ function searchInTitleAndContent($text, $table1, $table2) {
     return $query->fetchAll();
 }
 
+function countRow($table) {
+    global $pdo;
 
+    $sql = "SELECT COUNT(*) FROM $table WHERE status = 1";
 
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
 
+    return $query->fetchColumn();
+}
+
+function selectAllWithLimit($table1, $table2, $limit, $offset) {
+    global $pdo;
+
+    $sql = "SELECT p.*, u.username FROM $table1 AS p JOIN $table2 AS u ON p.id_user = u.id WHERE p.status = 1 LIMIT $limit OFFSET $offset";
+
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
+
+    return $query->fetchAll();
+}
+
+function countRowWithCategories($table, $topic_id) {
+    global $pdo;
+
+    $sql = "SELECT COUNT(*) FROM $table WHERE status = 1 AND id_topic = $topic_id";
+
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
+
+    return $query->fetchColumn();
+}
+
+function selectAllPostsCategoriesWithLimit($table1, $table2, $limit, $offset, $topic_id) {
+    global $pdo;
+
+    $sql = "SELECT p.*, u.username FROM $table1 AS p JOIN $table2 AS u ON p.id_user = u.id WHERE p.status = 1 AND p.id_topic = $topic_id LIMIT $limit OFFSET $offset";
+
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    dbCheckError($query);
+
+    return $query->fetchAll();
+}
 

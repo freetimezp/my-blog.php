@@ -103,6 +103,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $content = $post['content'];
     $status = $post['status'];
     $topic = $post['id_topic'];
+    $img = $post['img'];
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit-post'])) {

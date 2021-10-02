@@ -4,8 +4,17 @@ include('path.php');
 include('app/controllers/topics.php');
 include('app/include/header.php');
 
-$posts = selectAll('posts', ['status' => 1]);
+//$posts = selectAll('posts', ['status' => 1]);
 $sliderTopics = selectTopicsToSlider('posts');
+
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$limit = 2;
+$offset = $limit * ($page - 1);
+$total_pages = round(countRow('posts') / $limit, 0);
+
+$postsLimit = selectAllWithLimit('posts', 'users', $limit, $offset);
+
+//tt($total_pages);
 
 ?>
 
@@ -54,7 +63,7 @@ $sliderTopics = selectTopicsToSlider('posts');
         <div class="main-content col-12 col-md-9">
             <h2 class="main-content-title">Последние публикации</h2>
 
-            <?php foreach ($posts as $key => $post): ?>
+            <?php foreach ($postsLimit as $key => $post): ?>
                 <?php $user = selectOne('users', ['id' => $post['id_user']]); ?>
                 <?php $topic = selectOne('topics', ['id' => $post['id_topic']]); ?>
                 <div class="post row">
@@ -94,7 +103,7 @@ $sliderTopics = selectTopicsToSlider('posts');
                     </div>
                 </div>
             <?php endforeach; ?>
-
+            <?php include(SITE_ROOT . '/app/include/pagination.php'); ?>
         </div>
         <div class="sidebar sidebar-main col-12 col-md-3">
             <div class="section search">
