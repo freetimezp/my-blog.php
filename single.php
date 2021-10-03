@@ -35,6 +35,9 @@ include('app/include/header.php');
                 <div class="single_post_text col-12">
                     <?=$post['content'];?>
                 </div>
+
+                <?php include (SITE_ROOT . "/app/include/comments.php"); ?>
+
             </div>
         </div>
         <div class="sidebar col-12 col-md-3">
