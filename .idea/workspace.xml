@@ -23,11 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a177c988-ff91-45f0-af16-03d941daf197" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/commentaries.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/include/comments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/comments/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/comments/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/commentaries.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/commentaries.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/include/comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/include/comments.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/include/sidebar-admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/include/sidebar-admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single.php" beforeDir="false" afterPath="$PROJECT_DIR$/single.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,17 +66,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/include" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\openserver\OSPanel\domains\my-blog.php\assets" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\openserver\OSPanel\domains\my-blog.php\admin" />
       <recent name="C:\openserver\OSPanel\domains\my-blog.php\app\include" />
       <recent name="C:\openserver\OSPanel\domains\my-blog.php" />
       <recent name="C:\openserver\OSPanel\domains\my-blog.php\app\controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\openserver\OSPanel\domains\my-blog.php\assets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -119,6 +122,7 @@
       <workItem from="1633023801719" duration="1530000" />
       <workItem from="1633182801787" duration="9012000" />
       <workItem from="1633262706550" duration="6000000" />
+      <workItem from="1633626945281" duration="3620000" />
     </task>
     <servers />
   </component>

@@ -522,7 +522,9 @@ header ul li ul li:hover a {
     margin-left: 10px;
 }
 
-
+.comments button {
+    margin-bottom: 30px;
+}
 
 
 

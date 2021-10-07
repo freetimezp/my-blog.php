@@ -1,5 +1,10 @@
 <?php
 
+include(SITE_ROOT . '/app/database/db.php');
+
+$commentsForAdm = selectAll('comments');
+
+
 $page = $_GET['post_id'];
 $email = '';
 $comment = '';
