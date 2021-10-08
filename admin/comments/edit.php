@@ -19,31 +19,22 @@ include('../../app/include/header-admin.php');
         </div>
         <div class="posts posts-admin col-9">
             <div class="row title-post">
-                <h3>Редактирование комментариев</h3>
+                <h3>Редактирование комментария</h3>
             </div>
             <div class="row add-post">
                 <div class="col-12 col-md=12 err">
                     <?php include("../../app/helps/errorInfo.php");?>
                 </div>
-                <form action="edit.php" method="post" enctype="multipart/form-data">
+                <form action="edit.php" method="post">
                     <input name="id" value="<?=$id;?>" type="hidden">
                     <div class="col">
-                        <label for="content" class="form-label">Название статьи:</label>
-                        <input value="<?=$title;?>" name="title" type="text" class="form-control" placeholder="Введите название статьи" aria-label="Название статьи">
+                        <label for="email" class="form-label">Автор комментария:</label>
+                        <input value="<?=$email;?>" name="email" type="email" readonly disabled>
                     </div>
                     <div class="col">
-                        <label for="editor" class="form-label">Содержание статьи:</label>
+                        <label for="editor" class="form-label">Содержание комментария:</label>
                         <textarea name="content" class="form-control" id="editor" rows="6"><?=$content;?></textarea>
                     </div>
-                    <div class="input-group col">
-                        <input name="img" type="file" class="form-control" id="inputGroupFile02">
-                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                    </div>
-                    <select name="topic" class="form-select col" aria-label="Default select example">
-                        <?php foreach ($topics as $key => $topic): ?>
-                            <option value="<?=$topic['id'];?>"><?=$topic['name'];?></option>
-                        <?php endforeach; ?>
-                    </select>
                     <div class="row status form-check">
                         <?php if(empty($status) && $status == 0): ?>
                             <input class="col-1 form-check-input" type="checkbox" name="status" id="status">
@@ -54,7 +45,7 @@ include('../../app/include/header-admin.php');
                         <?php endif; ?>
                     </div>
                     <div class="col">
-                        <button name="edit-post" class="col-3 btn btn-primary" type="submit">Сохранить</button>
+                        <button name="edit-comment" class="col-3 btn btn-primary" type="submit">Сохранить</button>
                     </div>
                 </form>
             </div>
